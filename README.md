@@ -41,7 +41,7 @@ The entire installation process takes less than half an hour for the setting we 
 * **Step 2**: We can generate PCN based on the following three files: (1) the output file of detected proteins from step 1, (2) the COG/KEGG annotation from step 3 in the generation of GCN, and (3) the taxonomic classification from step 4 in the generation of GCN.
 
 ## Workflow for comparing $\text{FR}_g$ and $\text{FR}_p$ based on GCN and PCN
-The entire process is performed in Python. Examples such as `comparision_of_functional_redundancy.ipynb` and `data_analysis_HM454.ipynb` are shown below. Here is a summary:
+The entire process is performed in Python. Examples such as `synthetic_data.ipynb` and `real_data_analysis.ipynb` are shown below. Here is a summary:
 * **Step 1**: Load the GCN and PCN generated based on the workflows above.
 * **Step 2**: Compute $\text{FR}_g$ and $\text{FR}_p$ based on GCN and PCN.
 * **Step 3**: Visualize the comparison between $\text{FR}_g$ and $\text{FR}_p$ and classify three functional clusters.
@@ -49,14 +49,14 @@ The entire process is performed in Python. Examples such as `comparision_of_func
 ## Description of scripts
 The script `community_model.ipynb` presents how the community assembly is simulated in silico. It first created a pool of species with random abilities and later combined all species in the same community to find survived species after their competition. Both essential functions and alternative resource consumption functions are included in the model. More details about the model can be found in the [manuscript](https://www.biorxiv.org/content/10.1101/2022.11.04.515228v1.abstract).
 
-The script `comparision_of_functional_redundancy.ipynb` takes the microbial relative abundances, GCN (Gene Content Network) and PCN (Protein Content Network) and computed $\text{FR}_g$ and $\text{FR}_p$ for each protein function. Then we compare $\text{FR}_g$ and $\text{FR}_p$. 
+The script `synthetic_data.ipynb` takes the microbial relative abundances, GCN (Gene Content Network) and PCN (Protein Content Network) from the synthetic data and computed $\text{FR}_g$ and $\text{FR}_p$ for each protein function. Then we compare $\text{FR}_g$ and $\text{FR}_p$ for each modeled function and assign the functional cluster to it. 
 
-The script `data_analysis_HM454.ipynb` demonstrates how to load the GCN and PCN for the dataset of the human gut microbiome from subject HM454. It compared $\text{FR}_g$ with $\text{FR}_p$ for each COG and assign the functional cluster to it.
+The script `real_data_analysis.ipynb` demonstrates how to load the GCN and PCN for the real dataset of the human gut microbiome from subject HM454. It compared $\text{FR}_g$ with $\text{FR}_p$ for each COG and assign the functional cluster to it.
 
 ## Example
-We have simulated the result of one community assembly and saved the data to the "model_simulation_results.pickle". Here, the script `comparision_of_functional_redundancy.ipynb` directly takes the simulated data from "community_model.ipynb", including the microbial relative abundances for survived species, GCN (Gene Content Network) and PCN (Protein Content Network). The script generated results and figures similar to the [paper](https://www.biorxiv.org/content/10.1101/2022.11.04.515228v1.abstract).
+We have simulated the result of one community assembly and saved the data to the "model_simulation_results.pickle". Here, the script `synthetic_data.ipynb` directly takes the simulated data from "community_model.ipynb", including the microbial relative abundances for survived species, GCN (Gene Content Network) and PCN (Protein Content Network). The script generated results and figures similar to the [paper](https://www.biorxiv.org/content/10.1101/2022.11.04.515228v1.abstract).
 
-The script `data_analysis_HM454.ipynb` can be directly run to obtain Figs. 3 and 4 of the [paper](https://www.biorxiv.org/content/10.1101/2022.11.04.515228v1.abstract).
+The script `real_data_analysis.ipynb` can be directly run to obtain Figs. 3 and 4 as well as other similar supplementary figures of the [paper](https://www.biorxiv.org/content/10.1101/2022.11.04.515228v1.abstract).
 
 ## License
 This project is covered under the **MIT License**.
